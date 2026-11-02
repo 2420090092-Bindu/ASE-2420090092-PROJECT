@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.upload-section {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.upload-box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 45%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-box h2 {
+    margin-top: 0;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 20px 0;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #2563eb;
+    color: white;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+.analyze-section {
+    text-align: center;
+    margin: 35px 0;
+}
+
+.analyze-button {
+    font-size: 18px;
+    padding: 15px 40px;
+}
+
+#results {
+    margin-top: 30px;
+}
+
+.result-box {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-box h3 {
+    margin-top: 0;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #f1f5f9;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.download-section {
+    text-align: center;
+    margin: 30px 0;
+}

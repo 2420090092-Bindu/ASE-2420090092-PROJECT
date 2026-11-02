@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Correction Tool</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Text Corrector Tool</h1>
+        <p>Correct • Paraphrase • Translate • Speak</p>
+    </div>
+
+    <form method="POST" onsubmit="showLoading()">
+
+        <textarea id="textInput" name="text" placeholder="Enter your text..." required></textarea>
+
+        <div class="controls">
+
+
+            <button type="button" class="voice-btn" onclick="startListening()">
+                🎤 Voice
+            </button>
+
+            <button type="button" class="clear-btn" onclick="clearText()">
+                🧹 Clear
+            </button>
+
+        </div>
+
+        <div class="buttons">
+
+            <button name="action" value="correct">Correct</button>
+            <button name="action" value="paraphrase">Paraphrase</button>
+            
+
+        </div>
+
+    </form>
+
+    <div id="loading" class="loading">
+         processing...
+    </div>
+
+    <div class="output-card">
+
+        <h2>Output</h2>
+
+        <div class="output-box">
+            {{ output_text }}
+        </div>
+
+        <button type="button" class="copy-btn" onclick="copyText()">
+            📋 Copy Output
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function startListening() {
+    if (!('webkitSpeechRecognition' in window)) {
+        alert("Speech recognition not supported");
+        return;
+    }
+
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = "en-US";
+    recognition.start();
+
+    recognition.onresult = function(event) {
+        document.getElementById("textInput").value =
+            event.results[0][0].transcript;
+    };
+}
+
+function showLoading() {
+    document.getElementById("loading").style.display = "block";
+}
+
+function copyText() {
+    const text = document.querySelector(".output-box").innerText;
+    navigator.clipboard.writeText(text);
+    alert("Copied!");
+}
+
+function clearText() {
+    document.getElementById("textInput").value = "";
+}
+
+</script>
+
+</body>
+</html>

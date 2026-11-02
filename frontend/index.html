@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Security Patch Impact Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AI Security Patch Impact Analyzer</h1>
+
+        <p class="subtitle">
+            Analyze the impact of security patches
+        </p>
+
+        <div class="upload-section">
+
+            <div class="upload-box">
+
+                <h2>Upload Project</h2>
+
+                <input
+                    type="file"
+                    id="projectFile"
+                    accept=".zip"
+                >
+
+                <button onclick="uploadProject()">
+                    Upload Project
+                </button>
+
+                <p id="projectStatus"></p>
+
+            </div>
+
+
+            <div class="upload-box">
+
+                <h2>Upload Patch</h2>
+
+                <input
+                    type="file"
+                    id="patchFile"
+                    accept=".zip"
+                >
+
+                <button onclick="uploadPatch()">
+                    Upload Patch
+                </button>
+
+                <p id="patchStatus"></p>
+
+            </div>
+
+        </div>
+
+
+        <div class="analyze-section">
+
+            <button
+                class="analyze-button"
+                onclick="analyzeProject()">
+
+                Analyze
+
+            </button>
+
+        </div>
+
+
+        <div id="results">
+
+            <h2>Analysis Results</h2>
+
+            <div class="result-box">
+
+                <h3>Changed Files</h3>
+
+                <pre id="changedFiles">
+No analysis yet.
+                </pre>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <h3>Changed Functions</h3>
+
+                <pre id="changedFunctions">
+No analysis yet.
+                </pre>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <h3>AI Security Report</h3>
+
+                <pre id="aiReport">
+No analysis yet.
+                </pre>
+
+            </div>
+
+
+            <div class="download-section">
+
+                <button
+                    onclick="downloadReport()">
+
+                    Download PDF Report
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
